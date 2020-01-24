@@ -11,7 +11,7 @@
 
     <title>
         
-          BookDemo
+          book-demo
         
     </title>
 
@@ -39,12 +39,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
     
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-112717568-4', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const zooming = new Zooming()
-    zooming.listen('img')
+    zooming.listen('.book-content img')
 })
 </script>
 
@@ -52,20 +64,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <body>
 
-<div class="container">
-  <div class="book-container">
-    <div class="columns">
-      <div class="column col-2 hide-lg">
-        <div class="book-sidebar">
-  <h4 class="site-meta">
-    <a href="/hexo-theme-book-demo/">BookDemo</a>
-  </h4>
-  <div class="sidebar-content">
-    <ul>
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/hexo-theme-book-demo/">
+    <img src="/hexo-theme-book-demo/favicon.ico">
+    <span>BOOK-DEMO</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
 <li><a href="/hexo-theme-book-demo">Home</a></li>
-<li>Test
-<ul>
-<li><a href="https://github.com/hexojs/hexo-theme-unit-test" target="_blank" rel="noopener">hexo-unit-test</a>
+<li><a href="https://github.com/kaiiiz/hexo-theme-book" target="_blank" rel="noopener">hexo-theme-book</a></li>
+<li><a href="https://github.com/kaiiiz/hexo-theme-book-demo" target="_blank" rel="noopener">hexo-theme-book-demo</a></li>
+</ul>
+<h1 id="test">Test</h1>
+<h2 id="hexo-unit-test">hexo-unit-test</h2>
 <ul>
 <li><a href="/hexo-theme-book-demo/test/hexo-unit-test/categories">Categories</a></li>
 <li><a href="/hexo-theme-book-demo/test/hexo-unit-test/elements">Elements</a></li>
@@ -83,39 +97,51 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/hexo-theme-book-demo/test/hexo-unit-test/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6">中文測試</a></li>
 <li><a href="/hexo-theme-book-demo/test/hexo-unit-test/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88">日本語テスト</a></li>
 </ul>
-</li>
-<li><a href="/hexo-theme-book-demo/test/list-test">list test</a></li>
-</ul>
-</li>
-<li>Demo
+<h2 id="bugfix">bugfix</h2>
 <ul>
-<li><a href="/hexo-theme-book-demo/demo/markdown-it-demo">markdown-it demo</a></li>
-<li><a href="/hexo-theme-book-demo/demo/katex-demo">katex demo</a></li>
-<li><a href="/hexo-theme-book-demo/demo/footnotes-demo">footnotes demo</a></li>
-<li><a href="/hexo-theme-book-demo/demo/tc-demo">繁體中文測試</a></li>
-<li><a href="/hexo-theme-book-demo/demo/sc-demo">简体中文测试</a></li>
+<li><a href="/hexo-theme-book-demo/test/bugfix/list-test">list test</a></li>
 </ul>
-</li>
+<h1 id="demo">Demo</h1>
+<h2 id="render">Render</h2>
+<ul>
+<li><a href="/hexo-theme-book-demo/demo/render/markdown-it-demo">markdown-it demo</a></li>
+<li><a href="/hexo-theme-book-demo/demo/render/katex-demo">katex demo</a></li>
+<li><a href="/hexo-theme-book-demo/demo/render/footnotes-demo">footnotes demo</a></li>
+</ul>
+<h2 id="lorem-ipsum">Lorem Ipsum</h2>
+<ul>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/en-demo">English</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/tc-demo">繁體中文</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/sc-demo">简体中文</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/jp-demo">Japanese</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/kr-demo">Korean</a></li>
 </ul>
 
-  </div>
 </div>
 
-<script src="/hexo-theme-book-demo/js/book-sidebar.js"></script>
+<script src="/hexo-theme-book-demo/js/book-menu.js"></script>
+  </div>
 
-<script>
-collapse_sidebar(2)
-highlight_tab()
-show_sidebar()
-</script>
-      </div>
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
 
-      <div class="column col-8 col-lg-12">
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
         <div class="book-content">
           <div class='book-archive'>
   <!-- Title -->
   
-    <h2>Tags</h2>
+    <h1>Tags</h1>
   
 
   
@@ -124,8 +150,8 @@ show_sidebar()
   
 
   
-      <div class="book-archive-years">
-          <h5>2013</h5>
+      <div class="years">
+          <h2>2013</h2>
           <ul class="archive-list-item">
           
               <li>
@@ -143,69 +169,55 @@ show_sidebar()
 </div>
         </div>
       </div>
-
       <div class="column col-2 hide-lg">
-        <div class="book-toc">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="k"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>kaiiiz</div>
+      <div></div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
   <div class="book-tocbot">
-  </div>
-  <div class="book-tocbot-menu">
-    <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
-    <a onclick="go_top()">Back to top</a>
-    <a onclick="go_bottom()">Go to bottom</a>
-  </div>
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
 </div>
 
-<script>
-tocbot.init({
-  tocSelector: '.book-tocbot',
-  contentSelector: '.book-post',
-  headingSelector: 'h1, h2, h3, h4, h5',
-  collapseDepth: 2,
-  orderedList: false,
-  scrollSmooth: false,
-});
-
-function expand_toc(){
-  var b = document.querySelector(".book-toc-expand");
-  tocbot.init({
-    tocSelector: '.book-tocbot',
-    contentSelector: '.book-post',
-    headingSelector: 'h1, h2, h3, h4, h5',
-    collapseDepth: 6,
-    orderedList: false,
-    scrollSmooth: false,
-  });
-  b.setAttribute("onclick", "collapse_toc()");
-  b.innerHTML = "Collapse all"
-}
-
-function collapse_toc(){
-  var b = document.querySelector(".book-toc-expand");
-  tocbot.init({
-    tocSelector: '.book-tocbot',
-    contentSelector: '.book-post',
-    headingSelector: 'h1, h2, h3, h4, h5',
-    collapseDepth: 2,
-    orderedList: false,
-    scrollSmooth: false,
-  });
-  b.setAttribute("onclick", "expand_toc()");
-  b.innerHTML = "Expand all"
-}
-
-function go_top() {
-  window.scrollTo(0, 0);
-}
-
-function go_bottom() {
-  window.scrollTo(0, document.body.scrollHeight);
-}
-
-</script>
+<script src="/hexo-theme-book-demo/js/book-toc.js"></script>
+</div>
       </div>
     </div>
   </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
 </div>
 
 </body>
 </html>
+
+<script src="/hexo-theme-book-demo/js/book.js"></script>
