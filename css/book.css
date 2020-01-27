@@ -281,21 +281,20 @@ img {
     .book-sidebar .book-menu h4,
     .book-sidebar .book-menu h5,
     .book-sidebar .book-menu h6 {
-      margin-top: 1.25rem;
-      margin-right: 0.6rem;
-      margin-bottom: 0.625rem;
-      margin-left: 1.25rem;
+      padding: 0 0.6rem 0 1.25rem;
+      margin: 1.25rem 0 0.625rem 0;
       font-size: 0.7rem; }
     .book-sidebar .book-menu ul,
     .book-sidebar .book-menu ol,
     .book-sidebar .book-menu li {
       margin: 0;
       list-style: none; }
+    .book-sidebar .book-menu p {
+      margin: 0; }
     .book-sidebar .book-menu .uncollapsible {
-      margin-top: 0;
-      margin-right: 0.6rem;
-      margin-bottom: 0.625rem;
-      margin-left: 1.25rem; }
+      padding: 0 0.6rem 0 1.25rem;
+      margin: 0 0 0.625rem 0;
+      border-top: 1px solid #e7e7e7; }
     .book-sidebar .book-menu .accordion {
       padding: 0.625rem 0.6rem 0.625rem 1.25rem;
       border-top: 1px solid #e7e7e7; }

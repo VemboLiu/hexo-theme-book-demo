@@ -11,7 +11,7 @@
 
     <title>
         
-          demo/render/footnotes-demo - book-demo
+          wiki/change-render - book-demo
         
     </title>
 
@@ -141,78 +141,18 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="footnotes">Footnotes</h1>
-<p>You can hover on link to peek the content of footnotes.</p>
-<p>Please use markdown-it renderer, and install <a href="https://github.com/markdown-it/markdown-it-footnote" target="_blank" rel="noopener">markdown-it-footnote</a> plugin.</p>
-<h2 id="example">Example</h2>
-<p>Footnote 1 link<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
-<p>Footnote 2 link<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
-<p>Inline footnote<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> definition.</p>
-<p>Duplicated footnote reference<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>.</p>
-<h2 id="none">…</h2>
-<p>…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Footnote <strong>can have markup</strong></p>
-<p>and multiple paragraphs. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>Footnote text. <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>Text of inline footnote <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-
+  <p>For better render quality, I suggest that you should change the default renderer.</p>
+<h3 id="uninstall-original-renderer">Uninstall original renderer</h3>
+<p>First, uninstall the default renderer <code>hexo-renderer-marked</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+<h3 id="install-new-renderer">Install new renderer</h3>
+<p>Then, install new renderer <code>hexo-renderer-markdown-it</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-markdown-it --save</span><br></pre></td></tr></table></figure>
+<p>You can also choose to install renderer plugin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install markdown-it-abbr --save</span><br><span class="line">npm install markdown-it-container --save</span><br><span class="line">npm install markdown-it-deflist --save</span><br><span class="line">npm install markdown-it-emoji --save</span><br><span class="line">npm install markdown-it-footnote --save</span><br><span class="line">npm install markdown-it-imsize --save</span><br><span class="line">npm install markdown-it-ins --save</span><br><span class="line">npm install markdown-it-mark --save</span><br><span class="line">npm install markdown-it-regexp --save</span><br><span class="line">npm install markdown-it-sub --save</span><br><span class="line">npm install markdown-it-sup --save</span><br><span class="line">npm install markdown-it-checkbox --save</span><br></pre></td></tr></table></figure>
+<h3 id="configuration">Configuration</h3>
+<p>Finally, add these line in your site’s <code>_config.yml</code>, remember to modify entries according to your settings.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # Doesn&apos;t escape HTML content so the tags will appear as html.</span><br><span class="line">    xhtmlOut: false # Parser will not produce XHTML compliant code.</span><br><span class="line">    breaks: true # Parser produces `&lt;br&gt;` tags every time there is a line break in the source document.</span><br><span class="line">    linkify: true # Returns text links as text.</span><br><span class="line">    typographer: true # Substitution of common typographical elements will take place.</span><br><span class="line">    quotes: &apos;“”‘’&apos; # &quot;double&quot; will be turned into “single”</span><br><span class="line">                   # &apos;single&apos; will be turned into ‘single’</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-abbr</span><br><span class="line">    - markdown-it-container</span><br><span class="line">    - markdown-it-deflist</span><br><span class="line">    - markdown-it-emoji</span><br><span class="line">    - markdown-it-footnote</span><br><span class="line">    - markdown-it-imsize</span><br><span class="line">    - markdown-it-ins</span><br><span class="line">    - markdown-it-mark</span><br><span class="line">    - markdown-it-regexp</span><br><span class="line">    - markdown-it-sub</span><br><span class="line">    - markdown-it-sup</span><br><span class="line">    - markdown-it-checkbox</span><br><span class="line">  anchors:</span><br><span class="line">    # Minimum level for ID creation. (Ex. h2 to h6)</span><br><span class="line">    level: 1</span><br><span class="line">    # A suffix that is prepended to the number given if the ID is repeated.</span><br><span class="line">    collisionSuffix: &apos;v&apos;</span><br><span class="line">    # If `true`, creates an anchor tag with a permalink besides the heading.</span><br><span class="line">    permalink: false</span><br><span class="line">    # Class used for the permalink anchor tag.</span><br><span class="line">    permalinkClass: header-anchor</span><br><span class="line">    # The symbol used to make the permalink</span><br><span class="line">    permalinkSymbol: &apos;# &apos;</span><br></pre></td></tr></table></figure>
 </div>
 
 
@@ -249,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Author title -->
     <div class="author-title">
       <div>kaiiiz</div>
-      <div>2020-01-24</div>
+      <div>2020-01-26</div>
     </div>
   </div>
 

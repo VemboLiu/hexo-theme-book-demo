@@ -11,7 +11,7 @@
 
     <title>
         
-          demo/render/footnotes-demo - book-demo
+          demo/menu-realtime - book-demo
         
     </title>
 
@@ -141,77 +141,61 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="footnotes">Footnotes</h1>
-<p>You can hover on link to peek the content of footnotes.</p>
-<p>Please use markdown-it renderer, and install <a href="https://github.com/markdown-it/markdown-it-footnote" target="_blank" rel="noopener">markdown-it-footnote</a> plugin.</p>
-<h2 id="example">Example</h2>
-<p>Footnote 1 link<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
-<p>Footnote 2 link<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
-<p>Inline footnote<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> definition.</p>
-<p>Duplicated footnote reference<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>.</p>
-<h2 id="none">…</h2>
-<p>…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…<br>
-…</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Footnote <strong>can have markup</strong></p>
-<p>and multiple paragraphs. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>Footnote text. <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>Text of inline footnote <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+  <h1 id="menu-realtime-demo">Menu Realtime Demo</h1>
+<div id="demo_wrapper">
+  <textarea id="demo_textarea" spellcheck="false" placeholder="Syntax: H1 ~ H6 / Unordered list" rows="25" onKeyUp="render_demo()"></textarea>
+  <div id="demo_preset">
+    <ul class="menu">
+      <li class="divider" data-content="UNIT TEST"></li>
+      <li class="menu-item">
+        <a onclick="unit_header()">Header</a>
+        <a onclick="unit_list()">Unordered List</a>
+        <a onclick="unit_invalid()">Invalid Syntax</a>
+      </li>
+    </ul>
+    <ul class="menu">
+      <li class="divider" data-content="BASIC"></li>
+      <li class="menu-item">
+        <a onclick="basic_collapsed()">Collapsed Menu</a>
+        <a onclick="basic_uncollapsed()">Uncollapsed Menu</a>
+      </li>
+    </ul>
+    <ul class="menu">
+      <li class="divider" data-content="TRICKY"></li>
+      <li class="menu-item">
+        <a onclick="tricky_back_top()">Back to top level</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<style>
+#demo_wrapper {
+    width: 100%;
+    display: flex;
+}
+#demo_preset {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+#demo_preset ul {
+    margin: 0 0 1rem 0;
+}
+#demo_textarea {
+    flex: 3;
+    width: 100%;
+    padding: .5em;
+    font-size: .7rem;
+    font-family: consolas, Menlo, monospace;
+    resize: none;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js"></script>
+<script src="/hexo-theme-book-demo/js/menu-demo.js"></script>
+<script>
+init()
+</script>
 
 </div>
 
@@ -249,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Author title -->
     <div class="author-title">
       <div>kaiiiz</div>
-      <div>2020-01-24</div>
+      <div>2020-01-27</div>
     </div>
   </div>
 
