@@ -38,7 +38,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; }
+  z-index: 499; }
   .off-canvas-overlay.show {
     display: block; }
   @media all and (min-width: 1280px) {
@@ -47,7 +47,7 @@ img {
 
 .off-canvas-content {
   height: 100%;
-  font-family: 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans', sans-serif; }
+  font-family: sans-serif; }
   .off-canvas-content .book-content {
     padding: 0 0.75rem; }
     .off-canvas-content .book-content .book-post a:hover {
@@ -100,7 +100,7 @@ img {
     .off-canvas-content .book-content .book-post ul,
     .off-canvas-content .book-content .book-post ol {
       list-style-position: outside;
-      margin: 0 0 1.4rem 2rem; }
+      margin: 0 0 1.2rem 1.4rem; }
       .off-canvas-content .book-content .book-post ul ol,
       .off-canvas-content .book-content .book-post ol ol {
         margin-top: 0;
@@ -109,13 +109,20 @@ img {
       .off-canvas-content .book-content .book-post ol ul {
         margin-top: 0;
         margin-bottom: 0; }
+      .off-canvas-content .book-content .book-post ul p,
+      .off-canvas-content .book-content .book-post ol p {
+        margin: 0; }
     .off-canvas-content .book-content .book-post li {
       margin-top: 0.4rem;
       margin-bottom: 0.4rem; }
     .off-canvas-content .book-content .book-post blockquote {
       margin: 1.125rem 1.125rem 1.125rem 0;
       padding: 0.2rem 1rem; }
+      .off-canvas-content .book-content .book-post blockquote p {
+        margin-bottom: 0.5rem; }
       .off-canvas-content .book-content .book-post blockquote p:last-child {
+        margin-bottom: 0; }
+      .off-canvas-content .book-content .book-post blockquote ul:last-child {
         margin-bottom: 0; }
     .off-canvas-content .book-content .book-post .video-container {
       position: relative;
@@ -145,6 +152,141 @@ img {
     .off-canvas-content .book-content .utterances {
       max-width: 95%;
       margin: 0; }
+    .off-canvas-content .book-content pre, .off-canvas-content .book-content .highlight {
+      font-family: consolas, Menlo, monospace;
+      background: #f7f7f7;
+      color: #4d4d4c;
+      line-height: 1.33rem;
+      margin: 1rem auto 1rem; }
+    .off-canvas-content .book-content .gutter {
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none; }
+    .off-canvas-content .book-content code {
+      font-family: consolas, Menlo, monospace;
+      border-radius: 3px;
+      padding: 2px 4px;
+      overflow-wrap: break-word;
+      word-wrap: break-word; }
+    .off-canvas-content .book-content pre {
+      overflow: auto;
+      padding: 10px; }
+      .off-canvas-content .book-content pre code {
+        background: none;
+        color: #4d4d4c;
+        padding: 0;
+        text-shadow: none; }
+    .off-canvas-content .book-content .highlight {
+      font-size: 0.7rem;
+      overflow: auto; }
+      .off-canvas-content .book-content .highlight *::selection {
+        background: #d6d6d6; }
+      .off-canvas-content .book-content .highlight pre {
+        border: 0;
+        margin: 0;
+        padding: 10px 0; }
+      .off-canvas-content .book-content .highlight table {
+        border: 0;
+        margin: 0;
+        width: auto; }
+      .off-canvas-content .book-content .highlight td {
+        border: 0;
+        padding: 0; }
+      .off-canvas-content .book-content .highlight figcaption {
+        position: relative;
+        background: #eff2f3;
+        color: #869194;
+        line-height: 1em;
+        margin: 0;
+        padding: 0.5em; }
+        .off-canvas-content .book-content .highlight figcaption::before, .off-canvas-content .book-content .highlight figcaption::after {
+          content: " ";
+          display: table; }
+        .off-canvas-content .book-content .highlight figcaption a {
+          color: #4d4d4c;
+          position: absolute;
+          right: 6px; }
+          .off-canvas-content .book-content .highlight figcaption a:hover {
+            border-bottom-color: #4d4d4c; }
+      .off-canvas-content .book-content .highlight .marked {
+        background: #f8e9c0;
+        border-bottom: 0.05rem solid #ffe7ab;
+        border-radius: 0.1rem;
+        color: #3b4351;
+        padding: 0.05rem 0.1rem 0; }
+      .off-canvas-content .book-content .highlight .gutter pre {
+        background: #eff2f3;
+        color: #869194;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: right; }
+      .off-canvas-content .book-content .highlight .code pre {
+        background: #f7f7f7;
+        padding-left: 10px;
+        width: 100%; }
+    .off-canvas-content .book-content .gist table {
+      width: auto; }
+      .off-canvas-content .book-content .gist table td {
+        border: 0; }
+    .off-canvas-content .book-content pre .deletion {
+      background: if true, #fdd, #800000; }
+    .off-canvas-content .book-content pre .addition {
+      background: if true, #dfd, #008000; }
+    .off-canvas-content .book-content pre .meta {
+      color: #eab700; }
+    .off-canvas-content .book-content pre .comment {
+      color: #8e908c; }
+    .off-canvas-content .book-content pre .variable,
+    .off-canvas-content .book-content pre .attribute,
+    .off-canvas-content .book-content pre .tag,
+    .off-canvas-content .book-content pre .name,
+    .off-canvas-content .book-content pre .regexp,
+    .off-canvas-content .book-content pre .ruby .constant,
+    .off-canvas-content .book-content pre .xml .tag .title,
+    .off-canvas-content .book-content pre .xml .pi,
+    .off-canvas-content .book-content pre .xml .doctype,
+    .off-canvas-content .book-content pre .html .doctype,
+    .off-canvas-content .book-content pre .css .id,
+    .off-canvas-content .book-content pre .css .class,
+    .off-canvas-content .book-content pre .css .pseudo {
+      color: #c82829; }
+    .off-canvas-content .book-content pre .number,
+    .off-canvas-content .book-content pre .preprocessor,
+    .off-canvas-content .book-content pre .built_in,
+    .off-canvas-content .book-content pre .builtin-name,
+    .off-canvas-content .book-content pre .literal,
+    .off-canvas-content .book-content pre .params,
+    .off-canvas-content .book-content pre .constant,
+    .off-canvas-content .book-content pre .command {
+      color: #f5871f; }
+    .off-canvas-content .book-content pre .ruby .class .title,
+    .off-canvas-content .book-content pre .css .rules .attribute,
+    .off-canvas-content .book-content pre .string,
+    .off-canvas-content .book-content pre .symbol,
+    .off-canvas-content .book-content pre .value,
+    .off-canvas-content .book-content pre .inheritance,
+    .off-canvas-content .book-content pre .header,
+    .off-canvas-content .book-content pre .ruby .symbol,
+    .off-canvas-content .book-content pre .xml .cdata,
+    .off-canvas-content .book-content pre .special,
+    .off-canvas-content .book-content pre .formula {
+      color: #718c00; }
+    .off-canvas-content .book-content pre .title,
+    .off-canvas-content .book-content pre .css .hexcolor {
+      color: #3e999f; }
+    .off-canvas-content .book-content pre .function,
+    .off-canvas-content .book-content pre .python .decorator,
+    .off-canvas-content .book-content pre .python .title,
+    .off-canvas-content .book-content pre .ruby .function .title,
+    .off-canvas-content .book-content pre .ruby .title .keyword,
+    .off-canvas-content .book-content pre .perl .sub,
+    .off-canvas-content .book-content pre .javascript .title,
+    .off-canvas-content .book-content pre .coffeescript .title {
+      color: #4271ae; }
+    .off-canvas-content .book-content pre .keyword,
+    .off-canvas-content .book-content pre .javascript .function {
+      color: #8959a8; }
   .off-canvas-content .book-post-info {
     position: fixed;
     font-size: 0.7rem; }
@@ -168,7 +310,7 @@ img {
           display: flex;
           align-items: center; }
           .off-canvas-content .book-post-info .book-post-meta .author .author-img figure {
-            background: #FFF; }
+            background: #fff; }
         .off-canvas-content .book-post-info .book-post-meta .author .author-title {
           display: flex;
           justify-content: center;
@@ -235,7 +377,7 @@ img {
   position: fixed;
   width: 12rem;
   height: 100%;
-  z-index: 2;
+  z-index: 500;
   background-color: #f7f8f9;
   transition: transform 0.2s; }
   .book-sidebar.show {
@@ -249,7 +391,7 @@ img {
   .book-sidebar .book-brand {
     display: flex;
     position: fixed;
-    top: .85rem;
+    top: 0.85rem;
     left: 1.25rem;
     height: 2rem; }
     .book-sidebar .book-brand a {
@@ -263,7 +405,7 @@ img {
         height: 1.6rem;
         width: 1.6rem; }
       .book-sidebar .book-brand a span {
-        margin-left: .5rem; }
+        margin-left: 0.5rem; }
     .book-sidebar .book-brand a:hover {
       color: #2f2f2f;
       text-decoration: none; }
@@ -343,154 +485,3 @@ img {
 
 .book-archive .years {
   padding-bottom: 1.25rem; }
-
-pre, .highlight {
-  font-family: consolas, Menlo, monospace;
-  background: #f7f7f7;
-  color: #4d4d4c;
-  line-height: 1.33rem;
-  margin: 14px auto 14px; }
-
-.gutter, pre .meta {
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none; }
-
-code {
-  font-family: consolas, Menlo, monospace;
-  border-radius: 3px;
-  padding: 2px 4px;
-  overflow-wrap: break-word;
-  word-wrap: break-word; }
-
-pre {
-  overflow: auto;
-  padding: 10px; }
-  pre code {
-    background: none;
-    color: #4d4d4c;
-    padding: 0;
-    text-shadow: none; }
-
-.highlight {
-  font-size: 0.7rem;
-  overflow: auto; }
-  .highlight *::selection {
-    background: #d6d6d6; }
-  .highlight pre {
-    border: 0;
-    margin: 0;
-    padding: 10px 0; }
-  .highlight table {
-    border: 0;
-    margin: 0;
-    width: auto; }
-  .highlight td {
-    border: 0;
-    padding: 0; }
-  .highlight figcaption {
-    position: relative;
-    background: #eff2f3;
-    color: #869194;
-    line-height: 1em;
-    margin: 0;
-    padding: 0.5em; }
-    .highlight figcaption::before, .highlight figcaption::after {
-      content: " ";
-      display: table; }
-    .highlight figcaption a {
-      color: #4d4d4c;
-      position: absolute;
-      right: 6px; }
-      .highlight figcaption a:hover {
-        border-bottom-color: #4d4d4c; }
-  .highlight .marked {
-    background: #f8e9c0;
-    border-bottom: 0.05rem solid #ffe7ab;
-    border-radius: 0.1rem;
-    color: #3b4351;
-    padding: 0.05rem 0.1rem 0; }
-  .highlight .gutter pre {
-    background: #eff2f3;
-    color: #869194;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: right; }
-  .highlight .code pre {
-    background: #f7f7f7;
-    padding-left: 10px;
-    width: 100%; }
-
-.gist table {
-  width: auto; }
-  .gist table td {
-    border: 0; }
-
-pre .deletion {
-  background: if true, #fdd, #800000; }
-
-pre .addition {
-  background: if true, #dfd, #008000; }
-
-pre .meta {
-  color: #eab700; }
-
-pre .comment {
-  color: #8e908c; }
-
-pre .variable,
-pre .attribute,
-pre .tag,
-pre .name,
-pre .regexp,
-pre .ruby .constant,
-pre .xml .tag .title,
-pre .xml .pi,
-pre .xml .doctype,
-pre .html .doctype,
-pre .css .id,
-pre .css .class,
-pre .css .pseudo {
-  color: #c82829; }
-
-pre .number,
-pre .preprocessor,
-pre .built_in,
-pre .builtin-name,
-pre .literal,
-pre .params,
-pre .constant,
-pre .command {
-  color: #f5871f; }
-
-pre .ruby .class .title,
-pre .css .rules .attribute,
-pre .string,
-pre .symbol,
-pre .value,
-pre .inheritance,
-pre .header,
-pre .ruby .symbol,
-pre .xml .cdata,
-pre .special,
-pre .formula {
-  color: #718c00; }
-
-pre .title,
-pre .css .hexcolor {
-  color: #3e999f; }
-
-pre .function,
-pre .python .decorator,
-pre .python .title,
-pre .ruby .function .title,
-pre .ruby .title .keyword,
-pre .perl .sub,
-pre .javascript .title,
-pre .coffeescript .title {
-  color: #4271ae; }
-
-pre .keyword,
-pre .javascript .function {
-  color: #8959a8; }
